@@ -18,8 +18,8 @@ class InterfaceMaintenance:
         self.tasks_facade = tasks_facade
         self.data_def = data_def
         self.__menu_map = {
-            "0": interface_common.to_previous_menu(),
-            "1": self.delete_history(),
+            "0": interface_common.to_previous_menu,
+            "1": self.delete_history,
             "2": functools.partial(interface_common.quit_program, self.notes_facade),
         }
 
