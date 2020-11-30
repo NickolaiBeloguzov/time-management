@@ -97,6 +97,10 @@ class InterfaceTM:
     def __complete_task(self, first_run=True):
         interface_common.clear_screen()
         print("0 to cancel\n")
+        print("Your tasks:")
+        task_rows = self.tasks_facade.get_rows()
+        formatted_tasks = format_decorators.format_task(task_rows)
+        InterfaceTM.__print_entries(formatted_tasks)
         if first_run:
             task_input = input("Enter space delimited task IDs for completion: ")
         else:
